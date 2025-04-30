@@ -16,7 +16,7 @@ public class ConexionBD {
     }
 
     public static void guardarPartida(String nombre, String nacionalidad, int edad, String posicion) {
-        String sql = "INSERT INTO Partidas (jugador_nombre, jugador_nacionalidad, jugador_edad, jugador_posicion, ) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO Partidas (jugador_nombre, jugador_nacionalidad, jugador_edad, jugador_posicion ) VALUES (?, ?, ?, ?)";
         try (Connection conn = obtenerConnection();
              PreparedStatement sentencia = conn.prepareStatement(sql)) {
             sentencia.setString(1, nombre);
